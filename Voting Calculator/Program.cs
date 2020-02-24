@@ -14,6 +14,10 @@ namespace Voting_Calculator
         [STAThread]
         static void Main()
         {
+            public class Countries;
+            {
+                
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
