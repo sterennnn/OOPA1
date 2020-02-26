@@ -12,12 +12,21 @@ namespace Voting_Calculator
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string args)
         {
-            public class Countries;
+            List<Country> Countries = new List<Country>();
+
+            double CountryThreshold = Countries.Count * 0.55;
+            double PopThreshold = 0.65;
+            
+            foreach(string item in Countries)
             {
-                
+                Countries.Add(new Country(Countries[i], Population[i])); // This instantiates an object for the Country and its population to be used for their vote
+                Console.WriteLine($"{Countries[i]}, {Population[i]")
             }
+
+            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
