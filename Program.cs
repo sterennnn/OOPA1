@@ -18,12 +18,26 @@ namespace Voting_Calculator
 
             double CountryThreshold = Countries.Count * 0.55;
             double PopThreshold = 0.65;
-            
+            string Yes = "y";
+            string No = "n";
+            int YesVotes = 0;
+            int NoVotes = 0;
             foreach(string item in Countries)
             {
                 Countries.Add(new Country(Countries[i], Population[i])); // This instantiates an object for the Country and its population to be used for their vote
                 Console.WriteLine($"{Countries[i]}, Population: , {Population[i]}, You may now vote Yes (y), No (n) or to Abstain your vote (a).");
-                string UserInput = Console.ReadLine()
+                string UserInput = Console.ReadLine();
+                if (String.Equals(UserInput, Yes))
+                {
+                    YesVotes++;
+                    Console.WriteLine("You have voted yes.");
+
+                }
+                else (String.Equals(UserInput, No));
+                {
+                    NoVotes++;
+                    Console.WriteLine("You have voted no.");
+                }
             }
 
             
