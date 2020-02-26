@@ -1,0 +1,3 @@
+C:\Users\ste\source\repos\OOPA1\sss\Voting Calculator\obj\Debug\Voting Calculator.csprojAssemblyReference.cache
+C:\Users\ste\source\repos\OOPA1\sss\Voting Calculator\obj\Debug\Voting_Calculator.Properties.Resources.resources
+C:\Users\ste\source\repos\OOPA1\sss\Voting Calculator\obj\Debug\Voting Calculator.csproj.GenerateResource.cache
