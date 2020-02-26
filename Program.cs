@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Voting_Calculator
+namespace Voting_Calculator 
 {
-    static class Program
+    static class Program // This instantiates the class to be used in the program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -63,7 +63,7 @@ namespace Voting_Calculator
              "Sweden",
              };
 
-            Double[] CPopList = new double[] //Listed all of the country population values and in decimal form.
+            Double[] CPopList = new double[] // Populations for the countries above.
             {
              "1.98",
              "2.56",
