@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,16 +6,78 @@ using System.Windows.Forms;
 
 namespace Voting_Calculator
 {
-    static class Program
+    class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            List<Country> Countries = new List<Country>();
+            string[] Countries = new string[] //Listed all of the country names for use later in the code.
+            {
+             "Austria",
+             "Belgium",
+             "Bulgaria",
+             "Croatia",
+             "Cyprus",
+             "Czech Republic",
+             "Denmark",
+             "Estonia",
+             "Finland",
+             "France",
+             "Germany",
+             "Greece",
+             "Hungary",
+             "Ireland",
+             "Italy",
+             "Latvia",
+             "Lithuania",
+             "Luxemborg",
+             "Malta",
+             "Netherlands",
+             "Poland",
+             "Portugal",
+             "Romania",
+             "Slovakia",
+             "Slovenia",
+             "Spain",
+             "Sweden",
+             };
 
+            Double[] Population = new double[] //Listed all of the country population values and in decimal form.
+            {
+             "1.98",
+             "2.56",
+             "1.56",
+             "0.91",
+             "0.20",
+             "2.35",
+             "1.30",
+             "0.30",
+             "1.23",
+             "14.98",
+             "18.54",
+             "2.40",
+             "2.18",
+             "1.10",
+             "13.65",
+             "0.43",
+             "0.62",
+             "0.14",
+             "0.11",
+             "3.89",
+             "8.49",
+             "2.30",
+             "4.34",
+             "1.22",
+             "0.47",
+             "10.49",
+             "2.29",
+              
+             };
+
+            
             double CountryThreshold = Countries.Count * 0.55;
             double PopThreshold = 0.65;
 
@@ -25,6 +87,7 @@ namespace Voting_Calculator
             int NoVotes = 0;
             int PopVotes = 0;
 
+            List<Country> Countries = new List<Country>();
             foreach(string item in Countries)
             {
                 Countries.Add(new Country(Countries[i], Population[i])); // This instantiates an object for the Country and its population to be used for their vote
@@ -63,68 +126,7 @@ namespace Voting_Calculator
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             
-            string[] CountryList = new string[] //Listed all of the country names for use later in the code.
-            {
-             "Austria",
-             "Belgium",
-             "Bulgaria",
-             "Croatia",
-             "Cyprus",
-             "Czech Republic",
-             "Denmark",
-             "Estonia",
-             "Finland",
-             "France",
-             "Germany",
-             "Greece",
-             "Hungary",
-             "Ireland",
-             "Italy",
-             "Latvia",
-             "Lithuania",
-             "Luxemborg",
-             "Malta",
-             "Netherlands",
-             "Poland",
-             "Portugal",
-             "Romania",
-             "Slovakia",
-             "Slovenia",
-             "Spain",
-             "Sweden",
-             };
-
-            Double[] CPopList = new double[] //Listed all of the country population values and in decimal form.
-            {
-             "1.98",
-             "2.56",
-             "1.56",
-             "0.91",
-             "0.20",
-             "2.35",
-             "1.30",
-             "0.30",
-             "1.23",
-             "14.98",
-             "18.54",
-             "2.40",
-             "2.18",
-             "1.10",
-             "13.65",
-             "0.43",
-             "0.62",
-             "0.14",
-             "0.11",
-             "3.89",
-             "8.49",
-             "2.30",
-             "4.34",
-             "1.22",
-             "0.47",
-             "10.49",
-             "2.29",
-              
-             };
+            
         }
     }
 }
