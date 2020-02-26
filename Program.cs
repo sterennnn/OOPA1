@@ -4,29 +4,56 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Voting_Calculator 
+namespace Voting_Calculator
 {
-    static class Program // This instantiates the class to be used in the program
+    static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             List<Country> Countries = new List<Country>();
 
             double CountryThreshold = Countries.Count * 0.55;
             double PopThreshold = 0.65;
-            
+            string Yes = "y";
+            string No = "n";
+            int YesVotes = 0;
+            int NoVotes = 0;
+            int PopVotes = 0;
             foreach(string item in Countries)
             {
                 Countries.Add(new Country(Countries[i], Population[i])); // This instantiates an object for the Country and its population to be used for their vote
                 Console.WriteLine($"{Countries[i]}, Population: , {Population[i]}, You may now vote Yes (y), No (n) or to Abstain your vote (a).");
-                string UserInput = Console.ReadLine()
-            }
+                string UserInput = Console.ReadLine();
+                if (String.Equals(UserInput, Yes))
+                {
+                    YesVotes++;
+                    PopVotes += Population[i];
+                    Console.WriteLine("You have voted yes.");
 
+                }
+                else (String.Equals(UserInput, No));
+                {
+                    NoVotes++;
+                    Console.WriteLine("You have voted no.");
+                }
+            }
             
+            if(YesVotes > CountryThreshold)
+            {
+                Console.WriteLine("The vote has finished in favour of passing the motion due to Country majority.");
+            }
+            if (PopVotes > PopThreshold)
+            {
+                Console.WriteLine("The vote has finished in favour of passing the motion due to Population majority.");
+            }
+            else
+            {
+                Console.WriteLine("The vote has finished and has been rejected.");
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -63,7 +90,7 @@ namespace Voting_Calculator
              "Sweden",
              };
 
-            Double[] CPopList = new double[] // Populations for the countries above.
+            Double[] CPopList = new double[] //Listed all of the country population values and in decimal form.
             {
              "1.98",
              "2.56",
