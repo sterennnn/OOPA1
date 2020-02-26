@@ -14,6 +14,20 @@ namespace Voting_Calculator
         [STAThread]
         static void Main(string[] args)
         {
+            List<Country> Countries = new List<Country>();
+
+            double CountryThreshold = Countries.Count * 0.55;
+            double PopThreshold = 0.65;
+            
+            foreach(string item in Countries)
+            {
+                Countries.Add(new Country(Countries[i], Population[i])); // This instantiates an object for the Country and its population to be used for their vote
+                Console.WriteLine($"{Countries[i]}, Population: , {Population[i]}, You may now vote Yes (y), No (n) or to Abstain your vote (a).");
+                string UserInput = Console.ReadLine()
+            }
+
+            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
