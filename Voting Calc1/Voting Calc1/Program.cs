@@ -75,43 +75,44 @@ namespace Voting_Calculator
 
              };
 
-            int CountryCount = Countries.Count();
-            double CountryThreshold = CountryCount * 0.55;
-            double PopThreshold = 0.65;
+            int CountryCount = Countries.Count(); //Creates value to be used for the amount of countries
+            double CountryThreshold = CountryCount * 0.55; //Calculates the amount of countries necessary for a vote to be passed
+            double PopThreshold = 0.65; //Establishes the percentage of population required for a vote to be passed
 
-            string Yes = "y";
-            string No = "n";
-            int YesVotes = 0;
-            int NoVotes = 0;
-            double PopVotes = 0;
+            string Yes = "y"; //Creates string containing the response for yes to check against
+            string No = "n"; //Creates string containing the response for no to check against
+            int YesVotes = 0; //Establishes a counter for yes votes
+            int NoVotes = 0; //Establishes a counter for no votes
+            double PopVotes = 0; //Establishes the counter for the percentage of population voting yes
 
-            for(int i = 0; i < CountryCount; i++)
+            for(int i = 0; i < CountryCount; i++) //Iterates through the list of countries and Population
             {
-                Console.WriteLine($"{Countries[i]}, Population: , {Population[i]}, You may now vote Yes (y), No (n) or to Abstain your vote (a).");
+                Console.WriteLine($"{Countries[i]}, Population: , {Population[i]}, You may now vote Yes (y), No (n) or to Abstain your vote (a)."); //Displays the country and population for the country that is voting
 
-                string UserInput = Console.ReadLine();
-                if (String.Equals(UserInput, Yes))
+                string UserInput = Console.ReadLine(); //Reads the input from the user for their answer
+                if (String.Equals(UserInput, Yes)) //Checks if the user has voted yes
                 {
-                    YesVotes++;
-                    PopVotes += Population[i];
-                    Console.WriteLine("You have voted yes.");
+                    YesVotes++; //Adds a yes vote to the count
+                    PopVotes += Population[i]; //Adds the percentage of the population from the voting country to the count
+                    Console.WriteLine("You have voted yes."); 
 
                 }
-                if (String.Equals(UserInput, No))
+                if (String.Equals(UserInput, No)) //Checks if the user voted no
                 {
-                    NoVotes++;
+                    NoVotes++; //Adds a no vote to the count
                     Console.WriteLine("You have voted no.");
                 }
             }
-            double CountryPercent = YesVotes / CountryCount;
+            double CountryPercent = 100*(YesVotes / CountryCount); //Calculates the percentage of votes that were yes
             
             if (YesVotes > CountryThreshold)
             {
-                Console.WriteLine("The vote has finished in favour of passing the motion due to Country majority.");
+                Console.WriteLine($"The vote has finished in favour of passing the motion due to Country majority. {CountryPercent}% countries voted yes");
+                
             }
             if (PopVotes > PopThreshold)
             {
-                Console.WriteLine("The vote has finished in favour of passing the motion due to Population majority.");
+                Console.WriteLine($"The vote has finished in favour of passing the motion due to Population majority. {PopVotes}% population voted yes");
             }
             else
             {
