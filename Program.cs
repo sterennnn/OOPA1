@@ -18,15 +18,18 @@ namespace Voting_Calculator
 
             double CountryThreshold = Countries.Count * 0.55;
             double PopThreshold = 0.65;
+
             string Yes = "y";
             string No = "n";
             int YesVotes = 0;
             int NoVotes = 0;
             int PopVotes = 0;
+
             foreach(string item in Countries)
             {
                 Countries.Add(new Country(Countries[i], Population[i])); // This instantiates an object for the Country and its population to be used for their vote
                 Console.WriteLine($"{Countries[i]}, Population: , {Population[i]}, You may now vote Yes (y), No (n) or to Abstain your vote (a).");
+
                 string UserInput = Console.ReadLine();
                 if (String.Equals(UserInput, Yes))
                 {
@@ -54,6 +57,7 @@ namespace Voting_Calculator
             {
                 Console.WriteLine("The vote has finished and has been rejected.");
             }
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
