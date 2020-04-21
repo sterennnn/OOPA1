@@ -1,0 +1,9 @@
+GitHub's collaborative approach to development depends on publishing commits from your local repository for other people to view, fetch, and update.
+
+A remote URL is Git's fancy way of saying "the place where your code is stored." That URL could be your repository on GitHub, or another user's fork, or even on a completely different server.
+
+You can only push to two types of url addresses:
+
+An HTTPS URL like https://github.com/user/repo.git
+An SSH URL, like git@github.com:user/repo.git
+Git associates a remote URL with a name, and your default remote is usually called origin.
